@@ -1,3 +1,8 @@
 node_modules
 public/bundle*.js
-/coverage
+public/*.eot
+public/*.woff
+public/*.ttf
+public/*.svg
+public/*.woff
+public/*.woff2
