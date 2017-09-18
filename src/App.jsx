@@ -4,19 +4,19 @@ import { connect } from 'react-redux';
 import Alert from 'react-bootstrap/lib/Alert';
 import Modal from './modal.jsx';
 
-const App = ({ dispatch, visible }) => (
-    <div>
-      <h1>Hello from react!</h1>
-      <button onClick={() => dispatch({ type: 'PING' })}>Dispatch Ping</button>
-      <div>Check the console to see if ping was mapped to pong by cycle on Dispatch Ping</div>
-      <Alert bsStyle="info">
+const App = ({ dispatch, visible }) => {
+  let modalRef; // eslint-disable-line
+  return (<div>
+    <h1>Hello from react!</h1>
+    <button onClick={() => dispatch({ type: 'PING' })}>Dispatch Ping</button>
+    <div>Check the console to see if ping was mapped to pong by cycle on Dispatch Ping</div>
+    <Alert bsStyle="info">
         Hello from React Bootstrap
       </Alert>
-      <button className="show-dialog" onClick={() => dispatch({ type: 'SHOW_DIALOG' })}>Show Dialog</button>
-      <Modal visible />
-      <Modal visible={visible} />
-    </div>
-  );
+    <button className="show-dialog" onClick={() => dispatch({ type: 'SHOW_DIALOG' })}>Show Dialog</button>
+    <Modal visible={visible} />
+  </div>);
+};
 
 App.propTypes = {
   dispatch: PropTypes.func.isRequired,
