@@ -9,7 +9,9 @@ const cycleMiddleware = createCycleMiddleware();
 const { makeActionDriver, makeStateDriver } = cycleMiddleware;
 
 const store = createStore(combineReducers(
-  { dummy: state => state || {} }),
+  {
+    modal: (state = { visible: false }, action) => ((action && action.type === 'SHOW_DIALOG') ? { visible: true } : state),
+  }),
   {},
   applyMiddleware(cycleMiddleware));
 

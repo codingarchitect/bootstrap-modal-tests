@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand",
     "start": "webpack --progress && webpack-dev-server -d --progress --colors --hot --config webpack.config.js --watch"
   },
   "author": "",
@@ -37,7 +38,6 @@
     "eslint-plugin-react": "^7.3.0",
     "file-loader": "^0.11.2",
     "jest": "^20.0.4",
-    "react-dom": "^15.6.1",
     "react-test-renderer": "^15.6.1",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
@@ -52,6 +52,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.2",
+    "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "redux-cycles": "^0.4.1"
