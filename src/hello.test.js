@@ -15,10 +15,8 @@ test('allows us to find close-button', (done) => {
   </Provider>));
   wrapper.find('.show-dialog').simulate('click');
   setTimeout(() => {
-    const dialog = wrapper.find(Modal);
-    const modal = dialog.node._modal;
-    const closeButton = modal.getDialogElement().querySelector('.close-button');
-    ReactTestUtils.Simulate.click(closeButton);
+    const closeButton = wrapper.find('.close-button');
+    closeButton.last().simulate('click');
     done();
   }, 3000);
 });
